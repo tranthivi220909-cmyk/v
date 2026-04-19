@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Travel with Vi</title>
+  <title>Travel Booking - Vi</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
@@ -12,48 +12,45 @@
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family:'Poppins', sans-serif;
-      scroll-behavior:smooth;
+      font-family:'Poppins',sans-serif;
     }
 
     body{
-      background:#fff;
-      color:#000;
+      background:#f5f7fb;
+      color:#111;
     }
 
     header{
       position:fixed;
       top:0;
       width:100%;
+      background:#fff;
       display:flex;
       justify-content:space-between;
+      align-items:center;
       padding:15px 50px;
-      background:#fff;
       box-shadow:0 2px 10px rgba(0,0,0,0.1);
       z-index:1000;
     }
 
-    nav a{
-      margin-left:20px;
-      text-decoration:none;
-      color:#000;
+    header h1{
+      font-size:20px;
+      color:#00aaff;
     }
 
-    nav a:hover{
-      color:#00c6ff;
-    }
-
-    .banner{
-      height:100vh;
-      background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover no-repeat;
+    .hero{
+      margin-top:70px;
+      height:55vh;
+      background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover;
       display:flex;
       justify-content:center;
       align-items:center;
-      color:white;
+      color:#fff;
       position:relative;
+      text-align:center;
     }
 
-    .banner::after{
+    .hero::after{
       content:"";
       position:absolute;
       width:100%;
@@ -61,33 +58,28 @@
       background:rgba(0,0,0,0.4);
     }
 
-    .banner h1{
+    .hero h2{
       z-index:1;
-      font-size:50px;
-      animation:fadeIn 2s ease;
+      font-size:38px;
     }
 
-    @keyframes fadeIn{
-      from{opacity:0; transform:translateY(20px);}
-      to{opacity:1; transform:translateY(0);}
-    }
-
-    section{
-      padding:80px 50px;
+    .section{
+      padding:70px 50px;
     }
 
     .title{
       text-align:center;
-      margin-bottom:40px;
+      margin-bottom:30px;
     }
 
     .grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
       gap:20px;
     }
 
     .card{
+      background:#fff;
       border-radius:15px;
       overflow:hidden;
       box-shadow:0 5px 15px rgba(0,0,0,0.1);
@@ -100,7 +92,7 @@
 
     .card img{
       width:100%;
-      height:200px;
+      height:180px;
       object-fit:cover;
     }
 
@@ -108,62 +100,86 @@
       padding:15px;
     }
 
-    footer{
-      text-align:center;
+    .price{
+      color:#00aaff;
+      font-weight:bold;
+      margin:5px 0;
+    }
+
+    button{
+      padding:8px 10px;
+      border:none;
+      background:#00aaff;
+      color:#fff;
+      border-radius:8px;
+      cursor:pointer;
+      margin-top:8px;
+      margin-right:5px;
+    }
+
+    button:hover{
+      background:#0088cc;
+    }
+
+    .modal{
+      display:none;
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:rgba(0,0,0,0.5);
+      justify-content:center;
+      align-items:center;
+    }
+
+    .modal-content{
+      background:#fff;
       padding:20px;
-      background:#f5f5f5;
+      border-radius:10px;
+      width:320px;
+      text-align:center;
     }
 
-    .vi{
-      font-weight:600;
-      margin-top:10px;
+    .modal-content input{
+      width:100%;
+      padding:8px;
+      margin:5px 0;
     }
 
-    .cn{
+    .lang{
+      font-size:13px;
       color:#555;
-      font-size:14px;
     }
-
   </style>
 </head>
-
 <body>
 
 <header>
-  <h3>Travel with Vi</h3>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#places">Places</a>
-  </nav>
+  <h1>Travel Booking</h1>
 </header>
 
-<!-- BANNER -->
-<div class="banner" id="home">
-  <h1>Explore The World</h1>
+<div class="hero">
+  <h2>探索越南 / Khám phá Việt Nam</h2>
 </div>
 
-<!-- PLACES -->
-<section id="places">
-
+<div class="section">
   <div class="title">
-    <h2>Popular Destinations / 熱門旅遊景點</h2>
+    <h2>熱門景點 / Điểm đến nổi bật</h2>
   </div>
 
   <div class="grid">
 
-    <!-- HA NOI -->
+    <!-- HANOI -->
     <div class="card">
       <img src="https://images.unsplash.com/photo-1549893072-4bc678117f45">
       <div class="card-content">
-        <h3>Hà Nội / 河內</h3>
-
-        <p class="vi">
-          Hà Nội là thủ đô Việt Nam, nổi tiếng với Hồ Hoàn Kiếm, Phố Cổ và ẩm thực truyền thống.
-        </p>
-
-        <p class="cn">
-          河內是越南首都，以還劍湖、古街和傳統美食聞名。
-        </p>
+        <h3>河內 / Hà Nội</h3>
+        <p class="lang">越南首都 / Thủ đô Việt Nam</p>
+        <p>河內以還劍湖與古街聞名 / Hà Nội nổi tiếng với Phố Cổ và Hồ Hoàn Kiếm.</p>
+        <p class="price">Từ 2.500.000đ</p>
+        <button onclick="showInfo('hanoi')">Xem thêm</button>
+        <button onclick="openBook('Hà Nội')">Đặt ngay</button>
       </div>
     </div>
 
@@ -171,15 +187,12 @@
     <div class="card">
       <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21">
       <div class="card-content">
-        <h3>Hòa Bình / 和平省</h3>
-
-        <p class="vi">
-          Hòa Bình có thiên nhiên hùng vĩ, hồ nước lớn và bản làng dân tộc yên bình.
-        </p>
-
-        <p class="cn">
-          和平省擁有壯麗自然風光、大型湖泊與寧靜少數民族村落。
-        </p>
+        <h3>和平 / Hòa Bình</h3>
+        <p class="lang">山區自然 / Thiên nhiên núi non</p>
+        <p>和平省擁有美麗山區與湖泊 / Hòa Bình có thiên nhiên núi non và hồ nước đẹp.</p>
+        <p class="price">Từ 1.800.000đ</p>
+        <button onclick="showInfo('hoabinh')">Xem thêm</button>
+        <button onclick="openBook('Hòa Bình')">Đặt ngay</button>
       </div>
     </div>
 
@@ -187,24 +200,53 @@
     <div class="card">
       <img src="https://images.unsplash.com/photo-1528127269322-539801943592">
       <div class="card-content">
-        <h3>Hội An / 會安</h3>
-
-        <p class="vi">
-          Hội An là phố cổ nổi tiếng với đèn lồng, kiến trúc cổ và không khí yên bình.
-        </p>
-
-        <p class="cn">
-          會安以燈籠、古老建築和寧靜氛圍聞名，是世界文化遺產。
-        </p>
+        <h3>會安 / Hội An</h3>
+        <p class="lang">燈籠古鎮 / Phố cổ đèn lồng</p>
+        <p>會安是世界文化遺產古鎮 / Hội An là phố cổ di sản thế giới.</p>
+        <p class="price">Từ 3.200.000đ</p>
+        <button onclick="showInfo('hoian')">Xem thêm</button>
+        <button onclick="openBook('Hội An')">Đặt ngay</button>
       </div>
     </div>
 
   </div>
-</section>
+</div>
 
-<footer>
-  <p>© 2026 Travel with Vi</p>
-</footer>
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <h3 id="title"></h3>
+    <p id="desc"></p>
+    <input placeholder="Họ tên / 姓名">
+    <input placeholder="Số điện thoại / 電話">
+    <input placeholder="Ngày đi / 出發日期">
+    <button onclick="closeModal()">Xác nhận / 確認</button>
+  </div>
+</div>
+
+<script>
+let data = {
+  hanoi: "河內是越南首都，以還劍湖與古街聞名 / Hà Nội là thủ đô Việt Nam, nổi tiếng với Hồ Hoàn Kiếm và Phố Cổ",
+  hoabinh: "和平省擁有美麗山區自然景觀 / Hòa Bình có thiên nhiên núi non đẹp",
+  hoian: "會安是世界文化遺產古鎮 / Hội An là phố cổ di sản thế giới"
+};
+
+function showInfo(place){
+  document.getElementById('title').innerText = place.toUpperCase();
+  document.getElementById('desc').innerText = data[place];
+  document.getElementById('modal').style.display='flex';
+}
+
+function openBook(name){
+  document.getElementById('title').innerText = "訂購 / Đặt tour: " + name;
+  document.getElementById('desc').innerText = "請填寫資料 / Vui lòng nhập thông tin";
+  document.getElementById('modal').style.display='flex';
+}
+
+function closeModal(){
+  document.getElementById('modal').style.display='none';
+}
+</script>
 
 </body>
 </html>
