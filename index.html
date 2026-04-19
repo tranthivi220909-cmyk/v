@@ -67,6 +67,14 @@
       padding:70px 50px;
     }
 
+    .box{
+      background:#fff;
+      padding:20px;
+      border-radius:15px;
+      margin-bottom:20px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    }
+
     .title{
       text-align:center;
       margin-bottom:30px;
@@ -103,7 +111,6 @@
     .price{
       color:#00aaff;
       font-weight:bold;
-      margin:5px 0;
     }
 
     button{
@@ -121,132 +128,149 @@
       background:#0088cc;
     }
 
-    .modal{
-      display:none;
-      position:fixed;
-      top:0;
-      left:0;
+    iframe{
       width:100%;
-      height:100%;
-      background:rgba(0,0,0,0.5);
-      justify-content:center;
-      align-items:center;
-    }
-
-    .modal-content{
-      background:#fff;
-      padding:20px;
+      height:250px;
+      border:0;
       border-radius:10px;
-      width:320px;
-      text-align:center;
     }
 
-    .modal-content input{
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:15px;
+    }
+
+    .info-card img{
       width:100%;
-      padding:8px;
-      margin:5px 0;
+      height:140px;
+      object-fit:cover;
+      border-radius:10px;
     }
 
-    .lang{
-      font-size:13px;
-      color:#555;
-    }
   </style>
 </head>
+
 <body>
 
 <header>
-  <h1>Travel Booking</h1>
+  <h1>Travel Booking / 旅遊預訂</h1>
 </header>
 
 <div class="hero">
   <h2>探索越南 / Khám phá Việt Nam</h2>
 </div>
 
+<!-- BASIC INFO -->
+<div class="section">
+
+  <div class="box">
+    <h2>基本資訊 / Thông tin cơ bản</h2>
+    <p>公司 / Công ty: Travel with Vi</p>
+    <p>電話 / SĐT: 0123 456 789</p>
+    <p>Email: travelvi@gmail.com</p>
+    <p>網站: www.travelwithvi.com</p>
+    <p>口號 / Slogan: 探索世界，享受旅程 / Khám phá thế giới, tận hưởng hành trình</p>
+  </div>
+
+  <div class="box">
+    <h2>公司圖片 / Hình ảnh</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df">
+      </div>
+      <div class="info-card">
+        <img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd">
+      </div>
+      <div class="info-card">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+      </div>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>地圖位置 / Bản đồ</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3"></iframe>
+  </div>
+</div>
+
+<!-- SERVICES -->
 <div class="section">
   <div class="title">
-    <h2>熱門景點 / Điểm đến nổi bật</h2>
+    <h2>服務 / Dịch vụ</h2>
+  </div>
+
+  <div class="box">
+    <p>✈ 行程安排 / Lịch trình tour</p>
+    <p>🚌 交通 / Phương tiện</p>
+    <p>🏨 住宿 / Khách sạn</p>
+    <p>🧭 Hướng dẫn viên / 導遊</p>
+    <p>🛡 Bảo hiểm / 保險</p>
+  </div>
+</div>
+
+<!-- DESTINATIONS -->
+<div class="section">
+  <div class="title">
+    <h2>熱門景點 / Điểm đến</h2>
   </div>
 
   <div class="grid">
 
-    <!-- HANOI -->
     <div class="card">
       <img src="https://images.unsplash.com/photo-1549893072-4bc678117f45">
       <div class="card-content">
         <h3>河內 / Hà Nội</h3>
-        <p class="lang">越南首都 / Thủ đô Việt Nam</p>
-        <p>河內以還劍湖與古街聞名 / Hà Nội nổi tiếng với Phố Cổ và Hồ Hoàn Kiếm.</p>
-        <p class="price">Từ 2.500.000đ</p>
-        <button onclick="showInfo('hanoi')">Xem thêm</button>
-        <button onclick="openBook('Hà Nội')">Đặt ngay</button>
+        <p>歷史古城 / Thành phố lịch sử</p>
+        <p class="price">2.500.000đ</p>
+        <button>Xem thêm / 詳情</button>
       </div>
     </div>
 
-    <!-- HOA BINH -->
     <div class="card">
       <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21">
       <div class="card-content">
         <h3>和平 / Hòa Bình</h3>
-        <p class="lang">山區自然 / Thiên nhiên núi non</p>
-        <p>和平省擁有美麗山區與湖泊 / Hòa Bình có thiên nhiên núi non và hồ nước đẹp.</p>
-        <p class="price">Từ 1.800.000đ</p>
-        <button onclick="showInfo('hoabinh')">Xem thêm</button>
-        <button onclick="openBook('Hòa Bình')">Đặt ngay</button>
+        <p>自然風景 / Thiên nhiên</p>
+        <p class="price">1.800.000đ</p>
+        <button>Xem thêm / 詳情</button>
       </div>
     </div>
 
-    <!-- HOI AN -->
     <div class="card">
       <img src="https://images.unsplash.com/photo-1528127269322-539801943592">
       <div class="card-content">
         <h3>會安 / Hội An</h3>
-        <p class="lang">燈籠古鎮 / Phố cổ đèn lồng</p>
-        <p>會安是世界文化遺產古鎮 / Hội An là phố cổ di sản thế giới.</p>
-        <p class="price">Từ 3.200.000đ</p>
-        <button onclick="showInfo('hoian')">Xem thêm</button>
-        <button onclick="openBook('Hội An')">Đặt ngay</button>
+        <p>古鎮燈籠 / Phố cổ đèn lồng</p>
+        <p class="price">3.200.000đ</p>
+        <button>Xem thêm / 詳情</button>
       </div>
     </div>
 
   </div>
 </div>
 
-<!-- MODAL -->
-<div class="modal" id="modal">
-  <div class="modal-content">
-    <h3 id="title"></h3>
-    <p id="desc"></p>
-    <input placeholder="Họ tên / 姓名">
-    <input placeholder="Số điện thoại / 電話">
-    <input placeholder="Ngày đi / 出發日期">
-    <button onclick="closeModal()">Xác nhận / 確認</button>
+<!-- FOOD & EVENTS -->
+<div class="section">
+  <div class="box">
+    <h2>美食 / Ẩm thực</h2>
+    <p>河內: Pho, Bún chả</p>
+    <p>會安: Cao lầu, Bánh mì</p>
+  </div>
+
+  <div class="box">
+    <h2>活動 / Lễ hội</h2>
+    <p>中秋節 / Trung thu</p>
+    <p>燈籠節 / Lễ hội đèn lồng</p>
+  </div>
+
+  <div class="box">
+    <h2>旅行提示 / Lưu ý</h2>
+    <p>準備現金 / Chuẩn bị tiền mặt</p>
+    <p>注意天氣 / Kiểm tra thời tiết</p>
+    <p>尊重文化 / Tôn trọng văn hóa</p>
   </div>
 </div>
-
-<script>
-let data = {
-  hanoi: "河內是越南首都，以還劍湖與古街聞名 / Hà Nội là thủ đô Việt Nam, nổi tiếng với Hồ Hoàn Kiếm và Phố Cổ",
-  hoabinh: "和平省擁有美麗山區自然景觀 / Hòa Bình có thiên nhiên núi non đẹp",
-  hoian: "會安是世界文化遺產古鎮 / Hội An là phố cổ di sản thế giới"
-};
-
-function showInfo(place){
-  document.getElementById('title').innerText = place.toUpperCase();
-  document.getElementById('desc').innerText = data[place];
-  document.getElementById('modal').style.display='flex';
-}
-
-function openBook(name){
-  document.getElementById('title').innerText = "訂購 / Đặt tour: " + name;
-  document.getElementById('desc').innerText = "請填寫資料 / Vui lòng nhập thông tin";
-  document.getElementById('modal').style.display='flex';
-}
-
-function closeModal(){
-  document.getElementById('modal').style.display='none';
-}
-</script>
 
 </body>
 </html>
