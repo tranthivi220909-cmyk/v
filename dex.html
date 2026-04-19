@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel with Vi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background: #fff; color: #000; }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 50px;
+      position: fixed;
+      width: 100%;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    header h1 { font-size: 20px; }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: black;
+      transition: 0.3s;
+    }
+
+    nav a:hover { color: #00c6ff; }
+
+    .banner {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+
+    .banner h2 {
+      font-size: 50px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    section { padding: 80px 50px; }
+
+    .places {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+
+    .card:hover img {
+      transform: scale(1.1);
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+
+    .fade {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: 1s;
+    }
+
+    .fade.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Travel with Vi</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#places">Places</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="banner">
+  <h2>Explore The World</h2>
+</div>
+
+<section id="places">
+  <h2>Popular Places</h2>
+  <div class="places">
+    <div class="card fade">
+      <img src="https://images.unsplash.com/photo-1559599101-f09722fb4948">
+      <div class="card-content">
+        <h3>Da Nang</h3>
+        <p>Beautiful beaches and modern city.</p>
+      </div>
+    </div>
+
+    <div class="card fade">
+      <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad">
+      <div class="card-content">
+        <h3>Taipei</h3>
+        <p>Famous night markets and Taipei 101.</p>
+      </div>
+    </div>
+
+    <div class="card fade">
+      <img src="https://images.unsplash.com/photo-1528127269322-539801943592">
+      <div class="card-content">
+        <h3>Ha Long Bay</h3>
+        <p>World natural heritage with stunning views.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <p>Contact: tranthivi@email.com</p>
+</footer>
+
+<script>
+  const fades = document.querySelectorAll('.fade');
+
+  window.addEventListener('scroll', () => {
+    fades.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) {
+        el.classList.add('show');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
