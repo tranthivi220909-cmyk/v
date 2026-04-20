@@ -8,40 +8,77 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-    body{background:#f5f7fb;color:#111;}
-
-    header{
-      position:fixed;top:0;width:100%;
-      background:#fff;display:flex;justify-content:space-between;
-      align-items:center;padding:15px 50px;
-      box-shadow:0 2px 10px rgba(0,0,0,0.1);z-index:1000;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
     }
 
-    header h1{font-size:20px;color:#00aaff;}
+    body{
+      background:#f5f7fb;
+      color:#111;
+    }
+
+    header{
+      position:fixed;
+      top:0;
+      width:100%;
+      background:#fff;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 50px;
+      box-shadow:0 2px 10px rgba(0,0,0,0.1);
+      z-index:1000;
+    }
+
+    header h1{
+      font-size:20px;
+      color:#00aaff;
+    }
 
     .hero{
-      margin-top:70px;height:55vh;
+      margin-top:70px;
+      height:55vh;
       background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover;
-      display:flex;justify-content:center;align-items:center;
-      color:#fff;position:relative;text-align:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:#fff;
+      position:relative;
+      text-align:center;
     }
 
     .hero::after{
-      content:"";position:absolute;width:100%;height:100%;
+      content:"";
+      position:absolute;
+      width:100%;
+      height:100%;
       background:rgba(0,0,0,0.4);
     }
 
-    .hero h2{z-index:1;font-size:38px;}
-
-    .section{padding:70px 50px;}
-
-    .box{
-      background:#fff;padding:20px;border-radius:15px;
-      margin-bottom:20px;box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    .hero h2{
+      z-index:1;
+      font-size:38px;
     }
 
-    .title{text-align:center;margin-bottom:30px;}
+    .section{
+      padding:70px 50px;
+    }
+
+    .box{
+      background:#fff;
+      padding:20px;
+      border-radius:15px;
+      margin-bottom:20px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .title{
+      text-align:center;
+      margin-bottom:30px;
+    }
 
     .grid{
       display:grid;
@@ -50,51 +87,53 @@
     }
 
     .card{
-      background:#fff;border-radius:15px;overflow:hidden;
+      background:#fff;
+      border-radius:15px;
+      overflow:hidden;
       box-shadow:0 5px 15px rgba(0,0,0,0.1);
       transition:0.3s;
     }
 
-    .card:hover{transform:translateY(-5px);}
+    .card:hover{
+      transform:translateY(-5px);
+    }
 
     .card img{
-      width:100%;height:180px;object-fit:cover;
+      width:100%;
+      height:180px;
+      object-fit:cover;
     }
 
-    .card-content{padding:15px;}
+    .card-content{
+      padding:15px;
+    }
 
-    .price{color:#00aaff;font-weight:bold;}
+    .price{
+      color:#00aaff;
+      font-weight:bold;
+    }
 
     button{
-      padding:8px 10px;border:none;background:#00aaff;
-      color:#fff;border-radius:8px;cursor:pointer;
-      margin-top:8px;margin-right:5px;
+      padding:8px 10px;
+      border:none;
+      background:#00aaff;
+      color:#fff;
+      border-radius:8px;
+      cursor:pointer;
+      margin-top:8px;
     }
 
-    button:hover{background:#0088cc;}
-
-    iframe{
-      width:100%;height:250px;border:0;border-radius:10px;
+    button:hover{
+      background:#0088cc;
     }
 
-    .info-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:15px;
-    }
-
-    .info-card img{
-      width:100%;height:140px;
-      object-fit:cover;border-radius:10px;
-    }
-
-    /* MODAL */
+    /* POPUP */
     .modal{
       display:none;
       position:fixed;
       top:0;left:0;
       width:100%;height:100%;
-      background:rgba(0,0,0,0.5);
+      background:rgba(0,0,0,0.6);
       justify-content:center;
       align-items:center;
       z-index:2000;
@@ -102,11 +141,11 @@
 
     .modal-content{
       background:#fff;
-      padding:20px;
+      width:340px;
       border-radius:15px;
-      width:320px;
-      text-align:center;
-      animation:fadeIn 0.4s;
+      padding:20px;
+      text-align:left;
+      animation:pop 0.4s ease;
     }
 
     .modal-content img{
@@ -123,9 +162,9 @@
       cursor:pointer;
     }
 
-    @keyframes fadeIn{
-      from{opacity:0;transform:translateY(20px);}
-      to{opacity:1;transform:translateY(0);}
+    @keyframes pop{
+      from{transform:scale(0.7);opacity:0;}
+      to{transform:scale(1);opacity:1;}
     }
 
   </style>
@@ -148,8 +187,6 @@
     <p>公司 / Công ty: Travel with Vi</p>
     <p>電話 / SĐT: 0123 456 789</p>
     <p>Email: travelvi@gmail.com</p>
-    <p>網站: www.travelwithvi.com</p>
-    <p>口號 / Slogan: 探索世界，享受旅程 / Khám phá thế giới, tận hưởng hành trình</p>
   </div>
 </div>
 
@@ -165,7 +202,6 @@
       <img src="https://images.unsplash.com/photo-1549893072-4bc678117f45">
       <div class="card-content">
         <h3>河內 / Hà Nội</h3>
-        <p>歷史古城 / Thành phố lịch sử</p>
         <p class="price">2.500.000đ</p>
         <button onclick="openModal('hanoi')">Xem thêm / 詳情</button>
       </div>
@@ -175,7 +211,6 @@
       <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21">
       <div class="card-content">
         <h3>和平 / Hòa Bình</h3>
-        <p>自然風景 / Thiên nhiên</p>
         <p class="price">1.800.000đ</p>
         <button onclick="openModal('hoabinh')">Xem thêm / 詳情</button>
       </div>
@@ -185,7 +220,6 @@
       <img src="https://images.unsplash.com/photo-1528127269322-539801943592">
       <div class="card-content">
         <h3>會安 / Hội An</h3>
-        <p>古鎮燈籠 / Phố cổ đèn lồng</p>
         <p class="price">3.200.000đ</p>
         <button onclick="openModal('hoian')">Xem thêm / 詳情</button>
       </div>
@@ -194,37 +228,37 @@
   </div>
 </div>
 
-<!-- MAP -->
+<!-- AM THUC - LE HOI - LUU Y -->
 <div class="section">
-  <div class="title">
-    <h2>地圖位置 / Bản đồ</h2>
+  <div class="box">
+    <h2>🍜 Ẩm thực</h2>
+    <p>Hà Nội: Phở, Bún chả, Bánh cuốn</p>
+    <p>Hòa Bình: Cơm lam, Thịt nướng</p>
+    <p>Hội An: Cao lầu, Bánh mì</p>
   </div>
 
-  <div class="grid">
-    <div class="box">
-      <h3>河內 / Hà Nội</h3>
-      <iframe src="https://www.google.com/maps?q=Hanoi,Vietnam&output=embed"></iframe>
-    </div>
+  <div class="box">
+    <h2>🎉 Lễ hội</h2>
+    <p>Trung thu / 中秋節</p>
+    <p>Lễ hội đèn lồng Hội An</p>
+    <p>Tết Nguyên Đán / 春節</p>
+  </div>
 
-    <div class="box">
-      <h3>和平 / Hòa Bình</h3>
-      <iframe src="https://www.google.com/maps?q=Hoa+Binh,Vietnam&output=embed"></iframe>
-    </div>
-
-    <div class="box">
-      <h3>會安 / Hội An</h3>
-      <iframe src="https://www.google.com/maps?q=Hoi+An,Vietnam&output=embed"></iframe>
-    </div>
+  <div class="box">
+    <h2>⚠ Lưu ý</h2>
+    <p>Chuẩn bị tiền mặt</p>
+    <p>Kiểm tra thời tiết trước khi đi</p>
+    <p>Tôn trọng văn hóa địa phương</p>
   </div>
 </div>
 
-<!-- MODAL -->
-<div id="modal" class="modal">
+<!-- POPUP -->
+<div class="modal" id="modal">
   <div class="modal-content">
-    <span onclick="closeModal()" class="close">&times;</span>
-    <img id="modal-img" src="">
-    <h3 id="modal-title"></h3>
-    <p id="modal-text"></p>
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="img">
+    <h3 id="title"></h3>
+    <p id="text"></p>
   </div>
 </div>
 
@@ -240,19 +274,19 @@ function openModal(place){
 
   if(place==="hoabinh"){
     title="和平 / Hòa Bình";
-    text="Hồ Hòa Bình, Bản làng\nTrải nghiệm thiên nhiên";
+    text="Hồ Hòa Bình, thiên nhiên, nghỉ dưỡng";
     img="https://images.unsplash.com/photo-1500375592092-40eb2168fd21";
   }
 
   if(place==="hoian"){
     title="會安 / Hội An";
-    text="Phố cổ, Sông Hoài, Đèn lồng\nẨm thực: Cao lầu, Bánh mì";
+    text="Phố cổ, đèn lồng, sông Hoài";
     img="https://images.unsplash.com/photo-1528127269322-539801943592";
   }
 
-  document.getElementById("modal-title").innerText=title;
-  document.getElementById("modal-text").innerText=text;
-  document.getElementById("modal-img").src=img;
+  document.getElementById("title").innerText=title;
+  document.getElementById("text").innerText=text;
+  document.getElementById("img").src=img;
 
   document.getElementById("modal").style.display="flex";
 }
