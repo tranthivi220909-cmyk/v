@@ -1,173 +1,185 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Travel Booking - Vi</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel Booking - Vi</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:'Poppins',sans-serif;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
 
-    body{
-      background:#f5f7fb;
-      color:#111;
-    }
+body{
+  background:#f5f7fb;
+  color:#111;
+}
 
-    header{
-      position:fixed;
-      top:0;
-      width:100%;
-      background:#fff;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:15px 50px;
-      box-shadow:0 2px 10px rgba(0,0,0,0.1);
-      z-index:1000;
-    }
+/* HEADER */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 50px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.1);
+  z-index:1000;
+}
 
-    header h1{
-      font-size:20px;
-      color:#00aaff;
-    }
+header h1{
+  font-size:20px;
+  color:#00aaff;
+}
 
-    .hero{
-      margin-top:70px;
-      height:55vh;
-      background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      color:#fff;
-      position:relative;
-      text-align:center;
-    }
+/* HERO */
+.hero{
+  margin-top:70px;
+  height:55vh;
+  background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#fff;
+  position:relative;
+  text-align:center;
+}
 
-    .hero::after{
-      content:"";
-      position:absolute;
-      width:100%;
-      height:100%;
-      background:rgba(0,0,0,0.4);
-    }
+.hero::after{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.4);
+}
 
-    .hero h2{
-      z-index:1;
-      font-size:38px;
-    }
+.hero h2{
+  z-index:1;
+  font-size:38px;
+}
 
-    .section{
-      padding:70px 50px;
-    }
+/* SECTION */
+.section{
+  padding:70px 50px;
+}
 
-    .box{
-      background:#fff;
-      padding:20px;
-      border-radius:15px;
-      margin-bottom:20px;
-      box-shadow:0 5px 15px rgba(0,0,0,0.08);
-    }
+.box{
+  background:#fff;
+  padding:20px;
+  border-radius:15px;
+  margin-bottom:20px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
 
-    .title{
-      text-align:center;
-      margin-bottom:30px;
-    }
+.title{
+  text-align:center;
+  margin-bottom:30px;
+}
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:20px;
-    }
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
 
-    .card{
-      background:#fff;
-      border-radius:15px;
-      overflow:hidden;
-      box-shadow:0 5px 15px rgba(0,0,0,0.1);
-      transition:0.3s;
-    }
+/* CARD */
+.card{
+  background:#fff;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
 
-    .card:hover{
-      transform:translateY(-5px);
-    }
+.card:hover{
+  transform:translateY(-5px);
+}
 
-    .card img{
-      width:100%;
-      height:180px;
-      object-fit:cover;
-    }
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
 
-    .card-content{
-      padding:15px;
-    }
+.card-content{
+  padding:15px;
+}
 
-    .price{
-      color:#00aaff;
-      font-weight:bold;
-    }
+.price{
+  color:#00aaff;
+  font-weight:bold;
+}
 
-    button{
-      padding:8px 10px;
-      border:none;
-      background:#00aaff;
-      color:#fff;
-      border-radius:8px;
-      cursor:pointer;
-      margin-top:8px;
-    }
+button{
+  padding:8px 10px;
+  border:none;
+  background:#00aaff;
+  color:#fff;
+  border-radius:8px;
+  cursor:pointer;
+  margin-top:8px;
+}
 
-    button:hover{
-      background:#0088cc;
-    }
+button:hover{
+  background:#0088cc;
+}
 
-    /* POPUP */
-    .modal{
-      display:none;
-      position:fixed;
-      top:0;left:0;
-      width:100%;height:100%;
-      background:rgba(0,0,0,0.6);
-      justify-content:center;
-      align-items:center;
-      z-index:2000;
-    }
+/* POPUP */
+.modal{
+  display:none;
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,0.6);
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
+}
 
-    .modal-content{
-      background:#fff;
-      width:340px;
-      border-radius:15px;
-      padding:20px;
-      text-align:left;
-      animation:pop 0.4s ease;
-    }
+.modal-content{
+  background:#fff;
+  width:340px;
+  border-radius:15px;
+  padding:20px;
+  text-align:left;
+  animation:pop 0.4s ease;
+}
 
-    .modal-content img{
-      width:100%;
-      height:180px;
-      object-fit:cover;
-      border-radius:10px;
-      margin-bottom:10px;
-    }
+.modal-content img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:10px;
+  margin-bottom:10px;
+}
 
-    .close{
-      float:right;
-      font-size:22px;
-      cursor:pointer;
-    }
+.close{
+  float:right;
+  font-size:22px;
+  cursor:pointer;
+}
 
-    @keyframes pop{
-      from{transform:scale(0.7);opacity:0;}
-      to{transform:scale(1);opacity:1;}
-    }
+@keyframes pop{
+  from{transform:scale(0.7);opacity:0;}
+  to{transform:scale(1);opacity:1;}
+}
 
-  </style>
+/* MAP */
+iframe{
+  width:100%;
+  height:250px;
+  border:0;
+  border-radius:10px;
+}
+
+</style>
 </head>
 
 <body>
@@ -180,14 +192,27 @@
   <h2>探索越南 / Khám phá Việt Nam</h2>
 </div>
 
-<!-- BASIC INFO -->
+<!-- BASIC INFO + SERVICE -->
 <div class="section">
+
   <div class="box">
     <h2>基本資訊 / Thông tin cơ bản</h2>
     <p>公司 / Công ty: Travel with Vi</p>
     <p>電話 / SĐT: 0123 456 789</p>
     <p>Email: travelvi@gmail.com</p>
+    <p>網站 / Website: www.travelwithvi.com</p>
+    <p>口號 / Slogan: 探索世界，享受旅程 / Khám phá thế giới, tận hưởng hành trình</p>
   </div>
+
+  <div class="box">
+    <h2>服務 / Dịch vụ</h2>
+    <p>✈ 行程安排 / Lịch trình tour</p>
+    <p>🚌 交通 / Phương tiện</p>
+    <p>🏨 住宿 / Khách sạn</p>
+    <p>🧭 導遊 / Hướng dẫn viên</p>
+    <p>🛡 保險 / Bảo hiểm</p>
+  </div>
+
 </div>
 
 <!-- DESTINATIONS -->
@@ -228,27 +253,55 @@
   </div>
 </div>
 
-<!-- AM THUC - LE HOI - LUU Y -->
+<!-- ẨM THỰC + LỄ HỘI + LƯU Ý -->
 <div class="section">
+
   <div class="box">
     <h2>🍜 Ẩm thực</h2>
-    <p>Hà Nội: Phở, Bún chả, Bánh cuốn</p>
-    <p>Hòa Bình: Cơm lam, Thịt nướng</p>
+    <p>Hà Nội: Phở, Bún chả</p>
+    <p>Hòa Bình: Cơm lam</p>
     <p>Hội An: Cao lầu, Bánh mì</p>
   </div>
 
   <div class="box">
     <h2>🎉 Lễ hội</h2>
-    <p>Trung thu / 中秋節</p>
+    <p>Tết Nguyên Đán</p>
+    <p>Trung thu</p>
     <p>Lễ hội đèn lồng Hội An</p>
-    <p>Tết Nguyên Đán / 春節</p>
   </div>
 
   <div class="box">
     <h2>⚠ Lưu ý</h2>
     <p>Chuẩn bị tiền mặt</p>
-    <p>Kiểm tra thời tiết trước khi đi</p>
+    <p>Kiểm tra thời tiết</p>
     <p>Tôn trọng văn hóa địa phương</p>
+  </div>
+
+</div>
+
+<!-- MAP -->
+<div class="section">
+  <div class="title">
+    <h2>🗺 Bản đồ</h2>
+  </div>
+
+  <div class="grid">
+
+    <div class="box">
+      <h3>河內 / Hà Nội</h3>
+      <iframe src="https://www.google.com/maps?q=Hanoi,Vietnam&output=embed"></iframe>
+    </div>
+
+    <div class="box">
+      <h3>和平 / Hòa Bình</h3>
+      <iframe src="https://www.google.com/maps?q=Hoa+Binh,Vietnam&output=embed"></iframe>
+    </div>
+
+    <div class="box">
+      <h3>會安 / Hội An</h3>
+      <iframe src="https://www.google.com/maps?q=Hoi+An,Vietnam&output=embed"></iframe>
+    </div>
+
   </div>
 </div>
 
@@ -274,7 +327,7 @@ function openModal(place){
 
   if(place==="hoabinh"){
     title="和平 / Hòa Bình";
-    text="Hồ Hòa Bình, thiên nhiên, nghỉ dưỡng";
+    text="Thiên nhiên, hồ Hòa Bình";
     img="https://images.unsplash.com/photo-1500375592092-40eb2168fd21";
   }
 
