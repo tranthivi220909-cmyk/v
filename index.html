@@ -8,40 +8,77 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-    body{background:#f5f7fb;color:#111;}
-
-    header{
-      position:fixed;top:0;width:100%;
-      background:#fff;display:flex;justify-content:space-between;
-      align-items:center;padding:15px 50px;
-      box-shadow:0 2px 10px rgba(0,0,0,0.1);z-index:1000;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
     }
 
-    header h1{font-size:20px;color:#00aaff;}
+    body{
+      background:#f5f7fb;
+      color:#111;
+    }
+
+    header{
+      position:fixed;
+      top:0;
+      width:100%;
+      background:#fff;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 50px;
+      box-shadow:0 2px 10px rgba(0,0,0,0.1);
+      z-index:1000;
+    }
+
+    header h1{
+      font-size:20px;
+      color:#00aaff;
+    }
 
     .hero{
-      margin-top:70px;height:55vh;
+      margin-top:70px;
+      height:55vh;
       background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover;
-      display:flex;justify-content:center;align-items:center;
-      color:#fff;position:relative;text-align:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:#fff;
+      position:relative;
+      text-align:center;
     }
 
     .hero::after{
-      content:"";position:absolute;width:100%;height:100%;
+      content:"";
+      position:absolute;
+      width:100%;
+      height:100%;
       background:rgba(0,0,0,0.4);
     }
 
-    .hero h2{z-index:1;font-size:38px;}
-
-    .section{padding:70px 50px;}
-
-    .box{
-      background:#fff;padding:20px;border-radius:15px;
-      margin-bottom:20px;box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    .hero h2{
+      z-index:1;
+      font-size:38px;
     }
 
-    .title{text-align:center;margin-bottom:30px;}
+    .section{
+      padding:70px 50px;
+    }
+
+    .box{
+      background:#fff;
+      padding:20px;
+      border-radius:15px;
+      margin-bottom:20px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .title{
+      text-align:center;
+      margin-bottom:30px;
+    }
 
     .grid{
       display:grid;
@@ -50,29 +87,52 @@
     }
 
     .card{
-      background:#fff;border-radius:15px;overflow:hidden;
+      background:#fff;
+      border-radius:15px;
+      overflow:hidden;
       box-shadow:0 5px 15px rgba(0,0,0,0.1);
-      transition:0.3s;cursor:pointer;
+      transition:0.3s;
     }
 
-    .card:hover{transform:translateY(-5px);}
+    .card:hover{
+      transform:translateY(-5px);
+    }
 
-    .card img{width:100%;height:180px;object-fit:cover;}
+    .card img{
+      width:100%;
+      height:180px;
+      object-fit:cover;
+    }
 
-    .card-content{padding:15px;}
+    .card-content{
+      padding:15px;
+    }
 
-    .price{color:#00aaff;font-weight:bold;}
+    .price{
+      color:#00aaff;
+      font-weight:bold;
+    }
 
     button{
-      padding:8px 10px;border:none;background:#00aaff;
-      color:#fff;border-radius:8px;cursor:pointer;
-      margin-top:8px;margin-right:5px;
+      padding:8px 10px;
+      border:none;
+      background:#00aaff;
+      color:#fff;
+      border-radius:8px;
+      cursor:pointer;
+      margin-top:8px;
+      margin-right:5px;
     }
 
-    button:hover{background:#0088cc;}
+    button:hover{
+      background:#0088cc;
+    }
 
     iframe{
-      width:100%;height:250px;border:0;border-radius:10px;
+      width:100%;
+      height:250px;
+      border:0;
+      border-radius:10px;
     }
 
     .info-grid{
@@ -82,9 +142,12 @@
     }
 
     .info-card img{
-      width:100%;height:140px;
-      object-fit:cover;border-radius:10px;
+      width:100%;
+      height:140px;
+      object-fit:cover;
+      border-radius:10px;
     }
+
   </style>
 </head>
 
@@ -125,6 +188,25 @@
     </div>
   </div>
 
+  <div class="box">
+    <h2>地圖位置 / Bản đồ</h2>
+    <iframe src="https://www.google.com/maps?q=Vietnam&output=embed"></iframe>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div class="section">
+  <div class="title">
+    <h2>服務 / Dịch vụ</h2>
+  </div>
+
+  <div class="box">
+    <p>✈ 行程安排 / Lịch trình tour</p>
+    <p>🚌 交通 / Phương tiện</p>
+    <p>🏨 住宿 / Khách sạn</p>
+    <p>🧭 Hướng dẫn viên / 導遊</p>
+    <p>🛡 Bảo hiểm / 保險</p>
+  </div>
 </div>
 
 <!-- DESTINATIONS -->
@@ -135,86 +217,86 @@
 
   <div class="grid">
 
-    <div class="card" onclick="goMap('hanoi')">
+    <div class="card">
       <img src="https://images.unsplash.com/photo-1549893072-4bc678117f45">
       <div class="card-content">
         <h3>河內 / Hà Nội</h3>
         <p>歷史古城 / Thành phố lịch sử</p>
         <p class="price">2.500.000đ</p>
+        <button>Xem thêm / 詳情</button>
       </div>
     </div>
 
-    <div class="card" onclick="goMap('hoabinh')">
+    <div class="card">
       <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21">
       <div class="card-content">
         <h3>和平 / Hòa Bình</h3>
         <p>自然風景 / Thiên nhiên</p>
         <p class="price">1.800.000đ</p>
+        <button>Xem thêm / 詳情</button>
       </div>
     </div>
 
-    <div class="card" onclick="goMap('hoian')">
+    <div class="card">
       <img src="https://images.unsplash.com/photo-1528127269322-539801943592">
       <div class="card-content">
         <h3>會安 / Hội An</h3>
         <p>古鎮燈籠 / Phố cổ đèn lồng</p>
         <p class="price">3.200.000đ</p>
+        <button>Xem thêm / 詳情</button>
       </div>
     </div>
 
   </div>
 </div>
 
-<!-- MAP PRO (CHỈ THÊM PHẦN NÀY) -->
-<div class="section" id="map-section">
-  <div class="title">
-    <h2>地圖導航 / Bản đồ du lịch</h2>
+<!-- FOOD & EVENTS -->
+<div class="section">
+  <div class="box">
+    <h2>美食 / Ẩm thực</h2>
+    <p>河內: Pho, Bún chả</p>
+    <p>會安: Cao lầu, Bánh mì</p>
   </div>
 
   <div class="box">
-    <h3 id="map-title">👉 Chọn địa điểm bên trên</h3>
+    <h2>活動 / Lễ hội</h2>
+    <p>中秋節 / Trung thu</p>
+    <p>燈籠節 / Lễ hội đèn lồng</p>
+  </div>
 
-    <iframe id="map-frame"
-      src="https://www.google.com/maps?q=Vietnam&output=embed">
-    </iframe>
-
-    <br><br>
-
-    <a id="map-link" href="#" target="_blank">
-      <button>🌍 Xem bản đồ lớn / 查看地圖</button>
-    </a>
+  <div class="box">
+    <h2>旅行提示 / Lưu ý</h2>
+    <p>準備現金 / Chuẩn bị tiền mặt</p>
+    <p>注意天氣 / Kiểm tra thời tiết</p>
+    <p>尊重文化 / Tôn trọng văn hóa</p>
   </div>
 </div>
 
-<script>
-function goMap(place){
-  let url = "";
-  let title = "";
+<!-- MAP 3 ĐỊA ĐIỂM -->
+<div class="section">
+  <div class="title">
+    <h2>地圖位置 / Bản đồ các địa điểm</h2>
+  </div>
 
-  if(place === "hanoi"){
-    url = "https://www.google.com/maps?q=Hanoi,Vietnam";
-    title = "河內 / Hà Nội";
-  }
+  <div class="grid">
 
-  if(place === "hoabinh"){
-    url = "https://www.google.com/maps?q=Hoa+Binh,Vietnam";
-    title = "和平 / Hòa Bình";
-  }
+    <div class="box">
+      <h3>河內 / Hà Nội</h3>
+      <iframe src="https://www.google.com/maps?q=Hanoi,Vietnam&output=embed"></iframe>
+    </div>
 
-  if(place === "hoian"){
-    url = "https://www.google.com/maps?q=Hoi+An,Vietnam";
-    title = "會安 / Hội An";
-  }
+    <div class="box">
+      <h3>和平 / Hòa Bình</h3>
+      <iframe src="https://www.google.com/maps?q=Hoa+Binh,Vietnam&output=embed"></iframe>
+    </div>
 
-  document.getElementById("map-frame").src = url + "&output=embed";
-  document.getElementById("map-link").href = url;
-  document.getElementById("map-title").innerText = title;
+    <div class="box">
+      <h3>會安 / Hội An</h3>
+      <iframe src="https://www.google.com/maps?q=Hoi+An,Vietnam&output=embed"></iframe>
+    </div>
 
-  document.getElementById("map-section").scrollIntoView({
-    behavior: "smooth"
-  });
-}
-</script>
+  </div>
+</div>
 
 </body>
 </html>
