@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Travel Booking - Vi</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<title>Travel Booking</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -37,14 +39,13 @@ header{
 }
 
 header h1{
-  font-size:22px;
   color:#00aaff;
 }
 
 .cart-box{
   background:#00aaff;
   color:#fff;
-  padding:10px 15px;
+  padding:10px 16px;
   border-radius:10px;
   font-weight:bold;
 }
@@ -60,7 +61,6 @@ header h1{
   align-items:center;
   position:relative;
   text-align:center;
-  color:#fff;
 }
 
 .hero::after{
@@ -72,6 +72,7 @@ header h1{
 }
 
 .hero h2{
+  color:#fff;
   z-index:1;
   font-size:40px;
 }
@@ -91,8 +92,8 @@ header h1{
   background:#fff;
   padding:20px;
   border-radius:15px;
-  margin-bottom:20px;
   box-shadow:0 5px 15px rgba(0,0,0,0.08);
+  margin-bottom:20px;
 }
 
 /* GRID */
@@ -136,11 +137,11 @@ header h1{
 /* BUTTON */
 
 button{
-  padding:10px 14px;
   border:none;
+  padding:10px 14px;
+  border-radius:8px;
   background:#00aaff;
   color:#fff;
-  border-radius:8px;
   cursor:pointer;
   margin-top:8px;
   margin-right:5px;
@@ -150,7 +151,7 @@ button:hover{
   background:#0088cc;
 }
 
-/* BOOKING FORM */
+/* FORM */
 
 form input,
 form select{
@@ -161,8 +162,13 @@ form select{
   margin-top:5px;
 }
 
-form label{
-  font-weight:600;
+/* MAP */
+
+iframe{
+  width:100%;
+  height:250px;
+  border:0;
+  border-radius:10px;
 }
 
 /* MODAL */
@@ -183,8 +189,8 @@ form label{
 .modal-content{
   background:#fff;
   width:360px;
-  border-radius:15px;
   padding:20px;
+  border-radius:15px;
   animation:pop 0.4s ease;
 }
 
@@ -198,7 +204,7 @@ form label{
 
 .close{
   float:right;
-  font-size:22px;
+  font-size:24px;
   cursor:pointer;
 }
 
@@ -229,20 +235,18 @@ form label{
   border-radius:6px;
 }
 
-/* MAP */
-
-iframe{
-  width:100%;
-  height:250px;
-  border:0;
-  border-radius:10px;
-}
-
 /* CART */
 
 .cart-item{
-  padding:10px;
+  padding:12px 0;
   border-bottom:1px solid #ddd;
+}
+
+.total{
+  margin-top:15px;
+  font-size:20px;
+  color:#00aaff;
+  font-weight:bold;
 }
 
 .success{
@@ -263,7 +267,8 @@ iframe{
   <h1>Travel Booking / 旅遊預訂</h1>
 
   <div class="cart-box">
-    🛒 <span id="cartCount">0</span>
+    🛒 Giỏ hàng:
+    <span id="cartCount">0</span>
   </div>
 
 </header>
@@ -272,41 +277,6 @@ iframe{
 
 <div class="hero">
   <h2>探索越南 / Khám phá Việt Nam</h2>
-</div>
-
-<!-- BASIC INFO -->
-
-<div class="section">
-
-  <div class="box">
-
-    <h2>基本資訊 / Thông tin cơ bản</h2>
-
-    <p>公司 / Công ty: Travel with Vnp</p>
-    <p>電話 / SĐT: 0970 126 327</p>
-    <p>Email: travelvi@gmail.com</p>
-    <p>網站 / Website: www.travelwithvnp.com</p>
-
-    <p>
-      口號 / Slogan:
-      探索世界，享受旅程 /
-      Khám phá thế giới, tận hưởng hành trình
-    </p>
-
-  </div>
-
-  <div class="box">
-
-    <h2>服務 / Dịch vụ</h2>
-
-    <p>✈ 行程安排 / Lịch trình tour</p>
-    <p>🚌 交通 / Phương tiện</p>
-    <p>🏨 住宿 / Khách sạn</p>
-    <p>🧭 導遊 / Hướng dẫn viên</p>
-    <p>🛡 保險 / Bảo hiểm</p>
-
-  </div>
-
 </div>
 
 <!-- DESTINATIONS -->
@@ -335,7 +305,7 @@ iframe{
           詳情
         </button>
 
-        <button onclick="addToCart('Hà Nội')">
+        <button onclick="addToCart('Hà Nội',2500000)">
           加入購物車
         </button>
 
@@ -359,7 +329,7 @@ iframe{
           詳情
         </button>
 
-        <button onclick="addToCart('Hòa Bình')">
+        <button onclick="addToCart('Hòa Bình',1800000)">
           加入購物車
         </button>
 
@@ -383,7 +353,7 @@ iframe{
           詳情
         </button>
 
-        <button onclick="addToCart('Hội An')">
+        <button onclick="addToCart('Hội An',3200000)">
           加入購物車
         </button>
 
@@ -406,16 +376,6 @@ iframe{
     <p>河內 / Hà Nội: Phở, Bún chả</p>
     <p>和平 / Hòa Bình: Cơm lam</p>
     <p>會安 / Hội An: Cao lầu, Bánh mì</p>
-
-  </div>
-
-  <div class="box">
-
-    <h2>節慶 / Lễ hội</h2>
-
-    <p>農曆新年 / Tết Nguyên Đán</p>
-    <p>中秋節 / Trung thu</p>
-    <p>會安燈籠節 / Lễ hội đèn lồng Hội An</p>
 
   </div>
 
@@ -531,7 +491,7 @@ iframe{
 
 </div>
 
-<!-- POPUP -->
+<!-- MODAL -->
 
 <div class="modal" id="modal">
 
@@ -551,27 +511,106 @@ iframe{
 
 let cart = [];
 
-function addToCart(place){
+function addToCart(place, price){
 
-  cart.push(place);
+  cart.push({
+    name: place,
+    price: price
+  });
 
   document.getElementById("cartCount").innerText = cart.length;
 
   let html = "";
 
-  cart.forEach(function(item){
+  let total = 0;
+
+  cart.forEach(function(item, index){
+
+    total += item.price;
 
     html += `
       <div class="cart-item">
-        ✅ ${item}
+
+        <h3>${item.name}</h3>
+
+        <p>
+        價格 / Giá:
+        ${item.price.toLocaleString()}đ
+        </p>
+
+        <button onclick="removeItem(${index})">
+          刪除 / Xóa
+        </button>
+
       </div>
     `;
 
   });
 
+  html += `
+    <div class="total">
+      總金額 / Tổng tiền:
+      ${total.toLocaleString()}đ
+    </div>
+  `;
+
   document.getElementById("cartItems").innerHTML = html;
 
   alert(place + " đã được thêm vào giỏ hàng!");
+
+}
+
+/* REMOVE */
+
+function removeItem(index){
+
+  cart.splice(index,1);
+
+  document.getElementById("cartCount").innerText = cart.length;
+
+  let html = "";
+
+  let total = 0;
+
+  if(cart.length === 0){
+
+    document.getElementById("cartItems").innerHTML =
+    "Chưa có tour nào.";
+
+    return;
+  }
+
+  cart.forEach(function(item, i){
+
+    total += item.price;
+
+    html += `
+      <div class="cart-item">
+
+        <h3>${item.name}</h3>
+
+        <p>
+        價格 / Giá:
+        ${item.price.toLocaleString()}đ
+        </p>
+
+        <button onclick="removeItem(${i})">
+          刪除 / Xóa
+        </button>
+
+      </div>
+    `;
+
+  });
+
+  html += `
+    <div class="total">
+      總金額 / Tổng tiền:
+      ${total.toLocaleString()}đ
+    </div>
+  `;
+
+  document.getElementById("cartItems").innerHTML = html;
 
 }
 
