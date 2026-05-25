@@ -118,7 +118,7 @@ header h1{
 }
 
 button{
-  padding:8px 10px;
+  padding:10px 14px;
   border:none;
   background:#00aaff;
   color:#fff;
@@ -131,12 +131,28 @@ button:hover{
   background:#0088cc;
 }
 
+/* BOOKING FORM */
+form input,
+form select{
+  width:100%;
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  margin-top:5px;
+}
+
+form label{
+  font-weight:600;
+}
+
 /* POPUP */
 .modal{
   display:none;
   position:fixed;
-  top:0;left:0;
-  width:100%;height:100%;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
   background:rgba(0,0,0,0.6);
   justify-content:center;
   align-items:center;
@@ -167,8 +183,14 @@ button:hover{
 }
 
 @keyframes pop{
-  from{transform:scale(0.7);opacity:0;}
-  to{transform:scale(1);opacity:1;}
+  from{
+    transform:scale(0.7);
+    opacity:0;
+  }
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
 }
 
 /* GALLERY */
@@ -198,7 +220,6 @@ iframe{
   border:0;
   border-radius:10px;
 }
-
 </style>
 </head>
 
@@ -208,6 +229,7 @@ iframe{
   <h1>Travel Booking / 旅遊預訂</h1>
 </header>
 
+<!-- HERO -->
 <div class="hero">
   <h2>探索越南 / Khám phá Việt Nam</h2>
 </div>
@@ -221,7 +243,11 @@ iframe{
     <p>電話 / SĐT: 0970 126 327</p>
     <p>Email: travelvi@gmail.com</p>
     <p>網站 / Website: www.travelwithvnp.com</p>
-    <p>口號 / Slogan: 探索世界，享受旅程 / Khám phá thế giới, tận hưởng hành trình</p>
+    <p>
+      口號 / Slogan:
+      探索世界，享受旅程 /
+      Khám phá thế giới, tận hưởng hành trình
+    </p>
   </div>
 
   <div class="box">
@@ -237,36 +263,52 @@ iframe{
 
 <!-- DESTINATIONS -->
 <div class="section">
+
   <div class="title">
     <h2>熱門景點 / Điểm đến</h2>
   </div>
 
   <div class="grid">
 
+    <!-- Hanoi -->
     <div class="card">
       <img src="https://images.unsplash.com/photo-1549893072-4bc678117f45">
+
       <div class="card-content">
         <h3>河內 / Hà Nội</h3>
         <p class="price">2.500.000đ</p>
-        <button onclick="openModal('hanoi')">Xem thêm / 詳情</button>
+
+        <button onclick="openModal('hanoi')">
+          Xem thêm / 詳情
+        </button>
       </div>
     </div>
 
+    <!-- Hoa Binh -->
     <div class="card">
       <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21">
+
       <div class="card-content">
         <h3>和平 / Hòa Bình</h3>
         <p class="price">1.800.000đ</p>
-        <button onclick="openModal('hoabinh')">Xem thêm / 詳情</button>
+
+        <button onclick="openModal('hoabinh')">
+          Xem thêm / 詳情
+        </button>
       </div>
     </div>
 
+    <!-- Hoi An -->
     <div class="card">
       <img src="https://images.unsplash.com/photo-1528127269322-539801943592">
+
       <div class="card-content">
         <h3>會安 / Hội An</h3>
         <p class="price">3.200.000đ</p>
-        <button onclick="openModal('hoian')">Xem thêm / 詳情</button>
+
+        <button onclick="openModal('hoian')">
+          Xem thêm / 詳情
+        </button>
       </div>
     </div>
 
@@ -275,8 +317,10 @@ iframe{
 
 <!-- FOOD -->
 <div class="section">
+
   <div class="box">
     <h2>美食 / Ẩm thực</h2>
+
     <p>河內 / Hà Nội: Phở, Bún chả</p>
     <p>和平 / Hòa Bình: Cơm lam</p>
     <p>會安 / Hội An: Cao lầu, Bánh mì</p>
@@ -284,6 +328,7 @@ iframe{
 
   <div class="box">
     <h2>節慶 / Lễ hội</h2>
+
     <p>農曆新年 / Tết Nguyên Đán</p>
     <p>中秋節 / Trung thu</p>
     <p>會安燈籠節 / Lễ hội đèn lồng Hội An</p>
@@ -291,14 +336,17 @@ iframe{
 
   <div class="box">
     <h2>注意事項 / Lưu ý</h2>
+
     <p>準備現金 / Chuẩn bị tiền mặt</p>
     <p>檢查天氣 / Kiểm tra thời tiết</p>
     <p>尊重文化 / Tôn trọng văn hóa</p>
   </div>
+
 </div>
 
 <!-- MAP -->
 <div class="section">
+
   <div class="title">
     <h2>地圖 / Bản đồ</h2>
   </div>
@@ -307,82 +355,203 @@ iframe{
 
     <div class="box">
       <h3>河內 / Hà Nội</h3>
-      <iframe src="https://www.google.com/maps?q=Hanoi,Vietnam&output=embed"></iframe>
+
+      <iframe
+      src="https://www.google.com/maps?q=Hanoi,Vietnam&output=embed">
+      </iframe>
     </div>
 
     <div class="box">
       <h3>和平 / Hòa Bình</h3>
-      <iframe src="https://www.google.com/maps?q=Hoa+Binh,Vietnam&output=embed"></iframe>
+
+      <iframe
+      src="https://www.google.com/maps?q=Hoa+Binh,Vietnam&output=embed">
+      </iframe>
     </div>
 
     <div class="box">
       <h3>會安 / Hội An</h3>
-      <iframe src="https://www.google.com/maps?q=Hoi+An,Vietnam&output=embed"></iframe>
+
+      <iframe
+      src="https://www.google.com/maps?q=Hoi+An,Vietnam&output=embed">
+      </iframe>
     </div>
+
+  </div>
+</div>
+
+<!-- BOOKING -->
+<div class="section">
+
+  <div class="title">
+    <h2>預訂旅遊 / Đặt tour</h2>
+  </div>
+
+  <div class="box">
+
+    <form id="bookingForm">
+
+      <label>姓名 / Họ tên</label><br>
+      <input type="text" placeholder="Nhập họ tên" required>
+      <br><br>
+
+      <label>電話 / Số điện thoại</label><br>
+      <input type="tel" placeholder="098xxxxxxx" required>
+      <br><br>
+
+      <label>Email</label><br>
+      <input type="email" placeholder="example@gmail.com" required>
+      <br><br>
+
+      <label>選擇旅遊地點 / Chọn tour</label><br>
+
+      <select required>
+        <option>河內 / Hà Nội</option>
+        <option>和平 / Hòa Bình</option>
+        <option>會安 / Hội An</option>
+      </select>
+
+      <br><br>
+
+      <label>人數 / Số người</label><br>
+      <input type="number" min="1" value="1">
+
+      <br><br>
+
+      <label>出發日期 / Ngày khởi hành</label><br>
+      <input type="date" required>
+
+      <br><br>
+
+      <button type="submit">
+        立即預訂 / Đặt ngay
+      </button>
+
+    </form>
 
   </div>
 </div>
 
 <!-- POPUP -->
 <div class="modal" id="modal">
+
   <div class="modal-content" id="modalContent">
-    <span class="close" onclick="closeModal()">&times;</span>
+
+    <span class="close" onclick="closeModal()">
+      &times;
+    </span>
+
   </div>
+
 </div>
 
 <script>
+
 function openModal(place){
+
   let html = "";
 
   if(place==="hanoi"){
+
     html = `
       <span class="close" onclick="closeModal()">&times;</span>
+
       <img src="https://images.unsplash.com/photo-1549893072-4bc678117f45">
+
       <h3>河內 / Hà Nội</h3>
-      <p>還劍湖 / Hồ Gươm<br>古街 / Phố cổ<br>文廟 / Văn Miếu</p>
+
+      <p>
+      還劍湖 / Hồ Gươm<br>
+      古街 / Phố cổ<br>
+      文廟 / Văn Miếu
+      </p>
+
       <div class="gallery">
+
         <img src="https://images.unsplash.com/photo-1528196996876-7b9e6f8c2f0d">
+
         <img src="https://images.unsplash.com/photo-1529336953121-ad5a1f0f0d8f">
+
         <img src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba">
+
       </div>
     `;
   }
 
   if(place==="hoabinh"){
+
     html = `
       <span class="close" onclick="closeModal()">&times;</span>
+
       <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21">
+
       <h3>和平 / Hòa Bình</h3>
-      <p>自然景觀 / Thiên nhiên<br>和平水庫 / Hồ Hòa Bình</p>
+
+      <p>
+      自然景觀 / Thiên nhiên<br>
+      和平水庫 / Hồ Hòa Bình
+      </p>
+
       <div class="gallery">
+
         <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+
         <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+
         <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+
       </div>
     `;
   }
 
   if(place==="hoian"){
+
     html = `
       <span class="close" onclick="closeModal()">&times;</span>
+
       <img src="https://images.unsplash.com/photo-1528127269322-539801943592">
+
       <h3>會安 / Hội An</h3>
-      <p>古鎮 / Phố cổ<br>燈籠 / Đèn lồng<br>懷河 / Sông Hoài</p>
+
+      <p>
+      古鎮 / Phố cổ<br>
+      燈籠 / Đèn lồng<br>
+      懷河 / Sông Hoài
+      </p>
+
       <div class="gallery">
+
         <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21">
+
         <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba">
+
         <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+
       </div>
     `;
   }
 
   document.getElementById("modalContent").innerHTML = html;
+
   document.getElementById("modal").style.display = "flex";
 }
 
 function closeModal(){
+
   document.getElementById("modal").style.display = "none";
 }
+
+/* BOOKING */
+
+document.getElementById("bookingForm")
+.addEventListener("submit", function(e){
+
+  e.preventDefault();
+
+  alert("預訂成功！/ Đặt tour thành công!");
+
+});
+
 </script>
 
 </body>
