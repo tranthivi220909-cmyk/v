@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
 <style>
+
 *{
   margin:0;
   padding:0;
@@ -21,6 +22,7 @@ body{
 }
 
 /* HEADER */
+
 header{
   position:fixed;
   top:0;
@@ -35,11 +37,20 @@ header{
 }
 
 header h1{
-  font-size:20px;
+  font-size:22px;
   color:#00aaff;
 }
 
+.cart-box{
+  background:#00aaff;
+  color:#fff;
+  padding:10px 15px;
+  border-radius:10px;
+  font-weight:bold;
+}
+
 /* HERO */
+
 .hero{
   margin-top:70px;
   height:55vh;
@@ -47,9 +58,9 @@ header h1{
   display:flex;
   justify-content:center;
   align-items:center;
-  color:#fff;
   position:relative;
   text-align:center;
+  color:#fff;
 }
 
 .hero::after{
@@ -62,12 +73,18 @@ header h1{
 
 .hero h2{
   z-index:1;
-  font-size:38px;
+  font-size:40px;
 }
 
 /* SECTION */
+
 .section{
   padding:70px 50px;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:30px;
 }
 
 .box{
@@ -78,10 +95,7 @@ header h1{
   box-shadow:0 5px 15px rgba(0,0,0,0.08);
 }
 
-.title{
-  text-align:center;
-  margin-bottom:30px;
-}
+/* GRID */
 
 .grid{
   display:grid;
@@ -90,6 +104,7 @@ header h1{
 }
 
 /* CARD */
+
 .card{
   background:#fff;
   border-radius:15px;
@@ -115,7 +130,10 @@ header h1{
 .price{
   color:#00aaff;
   font-weight:bold;
+  margin:10px 0;
 }
+
+/* BUTTON */
 
 button{
   padding:10px 14px;
@@ -125,6 +143,7 @@ button{
   border-radius:8px;
   cursor:pointer;
   margin-top:8px;
+  margin-right:5px;
 }
 
 button:hover{
@@ -132,6 +151,7 @@ button:hover{
 }
 
 /* BOOKING FORM */
+
 form input,
 form select{
   width:100%;
@@ -145,7 +165,8 @@ form label{
   font-weight:600;
 }
 
-/* POPUP */
+/* MODAL */
+
 .modal{
   display:none;
   position:fixed;
@@ -164,7 +185,6 @@ form label{
   width:360px;
   border-radius:15px;
   padding:20px;
-  text-align:left;
   animation:pop 0.4s ease;
 }
 
@@ -194,6 +214,7 @@ form label{
 }
 
 /* GALLERY */
+
 .gallery{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -206,62 +227,90 @@ form label{
   height:60px;
   object-fit:cover;
   border-radius:6px;
-  transition:0.3s;
-}
-
-.gallery img:hover{
-  transform:scale(1.1);
 }
 
 /* MAP */
+
 iframe{
   width:100%;
   height:250px;
   border:0;
   border-radius:10px;
 }
+
+/* CART */
+
+.cart-item{
+  padding:10px;
+  border-bottom:1px solid #ddd;
+}
+
+.success{
+  color:green;
+  margin-top:15px;
+  font-weight:bold;
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
+
   <h1>Travel Booking / 旅遊預訂</h1>
+
+  <div class="cart-box">
+    🛒 <span id="cartCount">0</span>
+  </div>
+
 </header>
 
 <!-- HERO -->
+
 <div class="hero">
   <h2>探索越南 / Khám phá Việt Nam</h2>
 </div>
 
 <!-- BASIC INFO -->
+
 <div class="section">
 
   <div class="box">
+
     <h2>基本資訊 / Thông tin cơ bản</h2>
+
     <p>公司 / Công ty: Travel with Vnp</p>
     <p>電話 / SĐT: 0970 126 327</p>
     <p>Email: travelvi@gmail.com</p>
     <p>網站 / Website: www.travelwithvnp.com</p>
+
     <p>
       口號 / Slogan:
       探索世界，享受旅程 /
       Khám phá thế giới, tận hưởng hành trình
     </p>
+
   </div>
 
   <div class="box">
+
     <h2>服務 / Dịch vụ</h2>
+
     <p>✈ 行程安排 / Lịch trình tour</p>
     <p>🚌 交通 / Phương tiện</p>
     <p>🏨 住宿 / Khách sạn</p>
     <p>🧭 導遊 / Hướng dẫn viên</p>
     <p>🛡 保險 / Bảo hiểm</p>
+
   </div>
 
 </div>
 
 <!-- DESTINATIONS -->
+
 <div class="section">
 
   <div class="title">
@@ -270,81 +319,110 @@ iframe{
 
   <div class="grid">
 
-    <!-- Hanoi -->
+    <!-- HANOI -->
+
     <div class="card">
+
       <img src="https://images.unsplash.com/photo-1549893072-4bc678117f45">
 
       <div class="card-content">
+
         <h3>河內 / Hà Nội</h3>
+
         <p class="price">2.500.000đ</p>
 
         <button onclick="openModal('hanoi')">
-          Xem thêm / 詳情
+          詳情
         </button>
+
+        <button onclick="addToCart('Hà Nội')">
+          加入購物車
+        </button>
+
       </div>
+
     </div>
 
-    <!-- Hoa Binh -->
+    <!-- HOA BINH -->
+
     <div class="card">
+
       <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21">
 
       <div class="card-content">
+
         <h3>和平 / Hòa Bình</h3>
+
         <p class="price">1.800.000đ</p>
 
         <button onclick="openModal('hoabinh')">
-          Xem thêm / 詳情
+          詳情
         </button>
+
+        <button onclick="addToCart('Hòa Bình')">
+          加入購物車
+        </button>
+
       </div>
+
     </div>
 
-    <!-- Hoi An -->
+    <!-- HOI AN -->
+
     <div class="card">
+
       <img src="https://images.unsplash.com/photo-1528127269322-539801943592">
 
       <div class="card-content">
+
         <h3>會安 / Hội An</h3>
+
         <p class="price">3.200.000đ</p>
 
         <button onclick="openModal('hoian')">
-          Xem thêm / 詳情
+          詳情
         </button>
+
+        <button onclick="addToCart('Hội An')">
+          加入購物車
+        </button>
+
       </div>
+
     </div>
 
   </div>
+
 </div>
 
 <!-- FOOD -->
+
 <div class="section">
 
   <div class="box">
+
     <h2>美食 / Ẩm thực</h2>
 
     <p>河內 / Hà Nội: Phở, Bún chả</p>
     <p>和平 / Hòa Bình: Cơm lam</p>
     <p>會安 / Hội An: Cao lầu, Bánh mì</p>
+
   </div>
 
   <div class="box">
+
     <h2>節慶 / Lễ hội</h2>
 
     <p>農曆新年 / Tết Nguyên Đán</p>
     <p>中秋節 / Trung thu</p>
     <p>會安燈籠節 / Lễ hội đèn lồng Hội An</p>
-  </div>
 
-  <div class="box">
-    <h2>注意事項 / Lưu ý</h2>
-
-    <p>準備現金 / Chuẩn bị tiền mặt</p>
-    <p>檢查天氣 / Kiểm tra thời tiết</p>
-    <p>尊重文化 / Tôn trọng văn hóa</p>
   </div>
 
 </div>
 
 <!-- MAP -->
+
 <div class="section">
 
   <div class="title">
@@ -354,33 +432,51 @@ iframe{
   <div class="grid">
 
     <div class="box">
+
       <h3>河內 / Hà Nội</h3>
 
-      <iframe
-      src="https://www.google.com/maps?q=Hanoi,Vietnam&output=embed">
-      </iframe>
+      <iframe src="https://www.google.com/maps?q=Hanoi,Vietnam&output=embed"></iframe>
+
     </div>
 
     <div class="box">
+
       <h3>和平 / Hòa Bình</h3>
 
-      <iframe
-      src="https://www.google.com/maps?q=Hoa+Binh,Vietnam&output=embed">
-      </iframe>
+      <iframe src="https://www.google.com/maps?q=Hoa+Binh,Vietnam&output=embed"></iframe>
+
     </div>
 
     <div class="box">
+
       <h3>會安 / Hội An</h3>
 
-      <iframe
-      src="https://www.google.com/maps?q=Hoi+An,Vietnam&output=embed">
-      </iframe>
+      <iframe src="https://www.google.com/maps?q=Hoi+An,Vietnam&output=embed"></iframe>
+
     </div>
 
   </div>
+
+</div>
+
+<!-- CART -->
+
+<div class="section">
+
+  <div class="box">
+
+    <h2>🛒 購物車 / Giỏ hàng</h2>
+
+    <div id="cartItems">
+      Chưa có tour nào.
+    </div>
+
+  </div>
+
 </div>
 
 <!-- BOOKING -->
+
 <div class="section">
 
   <div class="title">
@@ -392,29 +488,29 @@ iframe{
     <form id="bookingForm">
 
       <label>姓名 / Họ tên</label><br>
-      <input type="text" placeholder="Nhập họ tên" required>
+      <input type="text" required>
+
       <br><br>
 
       <label>電話 / Số điện thoại</label><br>
-      <input type="tel" placeholder="098xxxxxxx" required>
+      <input type="tel" required>
+
       <br><br>
 
       <label>Email</label><br>
-      <input type="email" placeholder="example@gmail.com" required>
+      <input type="email" required>
+
       <br><br>
 
       <label>選擇旅遊地點 / Chọn tour</label><br>
 
       <select required>
+
         <option>河內 / Hà Nội</option>
         <option>和平 / Hòa Bình</option>
         <option>會安 / Hội An</option>
+
       </select>
-
-      <br><br>
-
-      <label>人數 / Số người</label><br>
-      <input type="number" min="1" value="1">
 
       <br><br>
 
@@ -427,12 +523,16 @@ iframe{
         立即預訂 / Đặt ngay
       </button>
 
+      <div class="success" id="successMessage"></div>
+
     </form>
 
   </div>
+
 </div>
 
 <!-- POPUP -->
+
 <div class="modal" id="modal">
 
   <div class="modal-content" id="modalContent">
@@ -446,6 +546,36 @@ iframe{
 </div>
 
 <script>
+
+/* CART */
+
+let cart = [];
+
+function addToCart(place){
+
+  cart.push(place);
+
+  document.getElementById("cartCount").innerText = cart.length;
+
+  let html = "";
+
+  cart.forEach(function(item){
+
+    html += `
+      <div class="cart-item">
+        ✅ ${item}
+      </div>
+    `;
+
+  });
+
+  document.getElementById("cartItems").innerHTML = html;
+
+  alert(place + " đã được thêm vào giỏ hàng!");
+
+}
+
+/* MODAL */
 
 function openModal(place){
 
@@ -534,11 +664,13 @@ function openModal(place){
   document.getElementById("modalContent").innerHTML = html;
 
   document.getElementById("modal").style.display = "flex";
+
 }
 
 function closeModal(){
 
   document.getElementById("modal").style.display = "none";
+
 }
 
 /* BOOKING */
@@ -548,7 +680,9 @@ document.getElementById("bookingForm")
 
   e.preventDefault();
 
-  alert("預訂成功！/ Đặt tour thành công!");
+  document.getElementById("successMessage")
+  .innerHTML =
+  "🎉 預訂成功！/ Đặt tour thành công!";
 
 });
 
