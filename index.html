@@ -230,7 +230,33 @@ form label{
   object-fit:cover;
   border-radius:6px;
 }
+<!-- CHECK IN & SHARE -->
 
+<div class="section">
+
+  <div class="box">
+
+    <h2>打卡與分享 / Check-in & Chia sẻ</h2>
+
+    <p>
+      📸 到訪景點後可以拍照打卡並分享旅遊體驗。
+    </p>
+
+    <button onclick="shareFacebook()">
+      分享到 Facebook
+    </button>
+
+    <button onclick="shareInstagram()">
+      分享到 Instagram
+    </button>
+
+    <button onclick="copyLink()">
+      複製網站連結
+    </button>
+
+  </div>
+
+</div>
 /* MAP */
 
 iframe{
@@ -452,7 +478,52 @@ iframe{
   </div>
 
 </div>
+<!-- PROMOTION & NEWS -->
 
+<div class="section">
+
+  <div class="title">
+    <h2>優惠活動與旅遊資訊 / Khuyến mãi & Tin tức du lịch</h2>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-content">
+        <h3>🎁 夏季優惠 / Ưu đãi mùa hè</h3>
+        <p>
+          預訂兩人以上旅遊行程可享 10% 折扣。
+          <br>
+          Đặt tour từ 2 người trở lên được giảm 10%.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <h3>📰 最新旅遊資訊</h3>
+        <p>
+          會安燈籠節即將舉行，歡迎旅客參加。
+          <br>
+          Lễ hội đèn lồng Hội An sắp diễn ra.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <h3>⭐ 熱門推薦</h3>
+        <p>
+          河內與會安是目前最受歡迎的旅遊行程。
+          <br>
+          Hà Nội và Hội An là các tour được yêu thích nhất.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
 <!-- MAP -->
 
 <div class="section">
@@ -806,7 +877,20 @@ function showInsurance(){
     "✔ 緊急救援服務 / Hỗ trợ khẩn cấp"
   );
 }
-</script>
+function shareFacebook(){
+  alert("分享至 Facebook 成功！\nĐã chia sẻ lên Facebook!");
+}
+
+function shareInstagram(){
+  alert("分享至 Instagram 成功！\nĐã chia sẻ lên Instagram!");
+}
+
+function copyLink(){
+
+  navigator.clipboard.writeText(window.location.href);
+
+  alert("網站連結已複製！\nĐã sao chép liên kết website!");
+}</script>
 
 </body>
 </html>
