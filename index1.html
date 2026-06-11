@@ -262,7 +262,88 @@ iframe{
   color:green;
   font-weight:bold;
 }
+.hero-content{
+  z-index:2;
+  text-align:center;
+}
 
+.hero-content h2{
+  font-size:50px;
+  margin-bottom:10px;
+}
+
+.hero-content h3{
+  font-size:28px;
+  margin-bottom:15px;
+}
+
+.hero-content p{
+  font-size:20px;
+  margin-bottom:20px;
+}
+
+.hero-content button{
+  font-size:18px;
+  padding:12px 25px;
+}
+
+.promo-banner{
+
+  background:#ff9800;
+
+  color:white;
+
+  text-align:center;
+
+  padding:15px;
+
+  font-size:20px;
+
+  font-weight:bold;
+
+  animation:flash 2s infinite;
+}
+
+@keyframes flash{
+
+  50%{
+    opacity:0.6;
+  }
+}
+
+.card{
+
+  background:#fff;
+
+  border-radius:20px;
+
+  overflow:hidden;
+
+  box-shadow:0 10px 25px rgba(0,0,0,0.12);
+
+  transition:0.4s;
+}
+
+.card:hover{
+
+  transform:translateY(-10px);
+
+  box-shadow:
+  0 15px 30px rgba(15,76,129,0.3);
+}
+
+footer{
+
+  background:#0f4c81;
+
+  color:white;
+
+  text-align:center;
+
+  padding:30px;
+
+  margin-top:50px;
+}
 </style>
 </head>
 
@@ -284,7 +365,33 @@ iframe{
 <!-- HERO -->
 
 <div class="hero">
-  <h2>探索越南 / Khám phá Việt Nam</h2>
+
+  <div class="hero-content">
+
+    <h2>探索越南</h2>
+
+    <h3>Khám phá Việt Nam</h3>
+
+    <p>
+      🎉 夏季優惠：
+      預訂兩人以上立即享 9 折優惠
+    </p>
+
+    <button onclick="document.getElementById('bookingForm').scrollIntoView({behavior:'smooth'})">
+
+      立即預訂 / Đặt ngay
+
+    </button>
+
+  </div>
+
+</div>
+
+<div class="promo-banner">
+
+🔥 限時優惠：
+會安旅遊行程折扣 15%
+
 </div>
 
 <!-- BASIC INFO -->
@@ -310,32 +417,34 @@ iframe{
 
   <div class="box">
 
-    <h2>服務 / Dịch vụ</h2>
+  <h2>服務 / Dịch vụ</h2>
 
-    <p>
+  <p>
     ✈ 行程安排 / Lịch trình tour
-    <a href="tour.html" target="_blank">🔗 Xem chi tiết</a>
+    <button onclick="showTour()">Xem</button>
   </p>
 
   <p>
     🚌 交通 / Phương tiện
-    <a href="transport.html" target="_blank">🔗 Xem chi tiết</a>
+    <button onclick="showTransport()">Xem</button>
   </p>
 
   <p>
     🏨 住宿 / Khách sạn
-    <a href="VNP HOTEL.html" target="_blank">🔗 Xem khách sạn</a>
+    <button onclick="showHotel()">Xem</button>
   </p>
 
   <p>
     🧭 導遊 / Hướng dẫn viên
-    <a href="guide.html" target="_blank">🔗 Xem chi tiết</a>
+    <button onclick="showGuide()">Xem</button>
   </p>
 
   <p>
     🛡 保險 / Bảo hiểm
-    <a href="insurance.html" target="_blank">🔗 Xem chi tiết</a>
+    <button onclick="showInsurance()">Xem</button>
   </p>
+
+</div>
 
 </div>
 
@@ -353,7 +462,7 @@ iframe{
 
     <div class="card">
 
-      <img src="1.jpg">
+      <img src="https://images.unsplash.com/photo-1549893072-4bc678117f45">
 
       <div class="card-content">
 
@@ -377,7 +486,7 @@ iframe{
 
     <div class="card">
 
-      <img src="2.jpg">
+      <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21">
 
       <div class="card-content">
 
@@ -401,7 +510,7 @@ iframe{
 
     <div class="card">
 
-      <img src="3.jpg">
+      <img src="https://images.unsplash.com/photo-1528127269322-539801943592">
 
       <div class="card-content">
 
@@ -450,7 +559,52 @@ iframe{
   </div>
 
 </div>
+<!-- PROMOTION & NEWS -->
 
+<div class="section">
+
+  <div class="title">
+    <h2>優惠活動與旅遊資訊 / Khuyến mãi & Tin tức du lịch</h2>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-content">
+        <h3>🎁 夏季優惠 / Ưu đãi mùa hè</h3>
+        <p>
+          預訂兩人以上旅遊行程可享 10% 折扣。
+          <br>
+          Đặt tour từ 2 người trở lên được giảm 10%.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <h3>📰 最新旅遊資訊</h3>
+        <p>
+          會安燈籠節即將舉行，歡迎旅客參加。
+          <br>
+          Lễ hội đèn lồng Hội An sắp diễn ra.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <h3>⭐ 熱門推薦</h3>
+        <p>
+          河內與會安是目前最受歡迎的旅遊行程。
+          <br>
+          Hà Nội và Hội An là các tour được yêu thích nhất.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
 <!-- MAP -->
 
 <div class="section">
@@ -479,7 +633,35 @@ iframe{
   </div>
 
 </div>
+<!-- CHECK IN & SHARE -->
 
+<div class="section">
+
+  <div class="box">
+
+    <h2>打卡與分享 / Check-in & Chia sẻ</h2>
+
+    <p>
+      📸 分享您的旅遊體驗給朋友！
+      <br>
+      Chia sẻ trải nghiệm du lịch của bạn với bạn bè.
+    </p>
+
+    <button onclick="shareFacebook()">
+      分享 Facebook
+    </button>
+
+    <button onclick="shareInstagram()">
+      分享 Instagram
+    </button>
+
+    <button onclick="copyLink()">
+      複製網站連結
+    </button>
+
+  </div>
+
+</div>
 <!-- BOOKING -->
 
 <div class="section">
@@ -760,8 +942,64 @@ document.getElementById("bookingForm")
 
   this.reset();
 });
+function showTour(){
+  alert(
+    "行程安排 / LỊCH TRÌNH TOUR\n\n" +
+    "第一天：河內 / Ngày 1: Hà Nội\n" +
+    "第二天：和平 / Ngày 2: Hòa Bình\n" +
+    "第三天：會安 / Ngày 3: Hội An"
+  );
+}
 
-</script>
+function showTransport(){
+  alert(
+    "交通服務 / PHƯƠNG TIỆN\n\n" +
+    "✔ 豪華旅遊巴士 / Xe du lịch đời mới\n" +
+    "✔ 來回機票 / Vé máy bay khứ hồi\n" +
+    "✔ 接送服務 / Dịch vụ đưa đón"
+  );
+}
+
+function showHotel(){
+  alert(
+    "住宿服務 / KHÁCH SẠN\n\n" +
+    "⭐ 三至五星級飯店 / Khách sạn 3-5 sao\n" +
+    "⭐ 免費早餐 / Buffet sáng miễn phí\n" +
+    "⭐ 游泳池與WiFi / Hồ bơi và WiFi"
+  );
+}
+
+function showGuide(){
+  alert(
+    "導遊服務 / HƯỚNG DẪN VIÊN\n\n" +
+    "✔ 熱情專業 / Nhiệt tình, chuyên nghiệp\n" +
+    "✔ 經驗豐富 / Kinh nghiệm lâu năm\n" +
+    "✔ 24小時支援 / Hỗ trợ 24/7"
+  );
+}
+
+function showInsurance(){
+  alert(
+    "旅遊保險 / BẢO HIỂM DU LỊCH\n\n" +
+    "✔ 意外保險 / Bảo hiểm tai nạn\n" +
+    "✔ 醫療保險 / Bảo hiểm y tế\n" +
+    "✔ 緊急救援服務 / Hỗ trợ khẩn cấp"
+  );
+}
+function shareFacebook(){
+  alert("分享至 Facebook 成功！\nĐã chia sẻ lên Facebook!");
+}
+
+function shareInstagram(){
+  alert("分享至 Instagram 成功！\nĐã chia sẻ lên Instagram!");
+}
+
+function copyLink(){
+
+  navigator.clipboard.writeText(window.location.href);
+
+  alert("網站連結已複製！\nĐã sao chép liên kết website!");
+}</script>
 
 </body>
 </html>
