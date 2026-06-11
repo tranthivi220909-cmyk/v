@@ -549,14 +549,14 @@ footer{
   </div>
 
   <div class="box">
+<h2>節慶 / Lễ hội</h2>
 
-    <h2>節慶 / Lễ hội</h2>
+<img src="festival.jpg" width="100%">
 
-    <p>農曆新年 / Tết Nguyên Đán</p>
-    <p>中秋節 / Trung thu</p>
-    <p>會安燈籠節 / Lễ hội đèn lồng Hội An</p>
-
-  </div>
+<p>農曆新年 / Tết Nguyên Đán</p>
+<p>中秋節 / Trung thu</p>
+<p>會安燈籠節 / Lễ hội đèn lồng Hội An</p>
+</div>
 
 </div>
 <!-- PROMOTION & NEWS -->
@@ -660,7 +660,46 @@ footer{
     </button>
 
   </div>
+<!-- CUSTOMER REVIEWS -->
 
+<div class="section">
+
+  <div class="title">
+    <h2>顧客評價 / Đánh giá khách hàng</h2>
+  </div>
+
+  <div class="grid">
+
+    <div class="box">
+      <h3>⭐⭐⭐⭐⭐</h3>
+      <p>
+        旅遊行程非常精彩，導遊很熱情。
+        <br>
+        Tour rất tuyệt vời, hướng dẫn viên nhiệt tình.
+      </p>
+    </div>
+
+    <div class="box">
+      <h3>⭐⭐⭐⭐⭐</h3>
+      <p>
+        會安非常漂亮，美食也很好吃。
+        <br>
+        Hội An rất đẹp và đồ ăn rất ngon.
+      </p>
+    </div>
+
+    <div class="box">
+      <h3>⭐⭐⭐⭐⭐</h3>
+      <p>
+        我一定會再次參加這個旅遊行程。
+        <br>
+        Chắc chắn tôi sẽ tiếp tục tham gia tour này lần sau.
+      </p>
+    </div>
+
+  </div>
+
+</div>
 </div>
 <!-- BOOKING -->
 
@@ -987,7 +1026,10 @@ function showInsurance(){
   );
 }
 function shareFacebook(){
-  alert("分享至 Facebook 成功！\nĐã chia sẻ lên Facebook!");
+  window.open(
+  "https://www.facebook.com/sharer/sharer.php?u=" +
+  encodeURIComponent(window.location.href)
+  );
 }
 
 function shareInstagram(){
