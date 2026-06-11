@@ -230,7 +230,7 @@ form label{
   object-fit:cover;
   border-radius:6px;
 }
-</div>
+
 /* MAP */
 
 iframe{
@@ -262,7 +262,88 @@ iframe{
   color:green;
   font-weight:bold;
 }
+.hero-content{
+  z-index:2;
+  text-align:center;
+}
 
+.hero-content h2{
+  font-size:50px;
+  margin-bottom:10px;
+}
+
+.hero-content h3{
+  font-size:28px;
+  margin-bottom:15px;
+}
+
+.hero-content p{
+  font-size:20px;
+  margin-bottom:20px;
+}
+
+.hero-content button{
+  font-size:18px;
+  padding:12px 25px;
+}
+
+.promo-banner{
+
+  background:#ff9800;
+
+  color:white;
+
+  text-align:center;
+
+  padding:15px;
+
+  font-size:20px;
+
+  font-weight:bold;
+
+  animation:flash 2s infinite;
+}
+
+@keyframes flash{
+
+  50%{
+    opacity:0.6;
+  }
+}
+
+.card{
+
+  background:#fff;
+
+  border-radius:20px;
+
+  overflow:hidden;
+
+  box-shadow:0 10px 25px rgba(0,0,0,0.12);
+
+  transition:0.4s;
+}
+
+.card:hover{
+
+  transform:translateY(-10px);
+
+  box-shadow:
+  0 15px 30px rgba(15,76,129,0.3);
+}
+
+footer{
+
+  background:#0f4c81;
+
+  color:white;
+
+  text-align:center;
+
+  padding:30px;
+
+  margin-top:50px;
+}
 </style>
 </head>
 
@@ -284,7 +365,33 @@ iframe{
 <!-- HERO -->
 
 <div class="hero">
-  <h2>探索越南 / Khám phá Việt Nam</h2>
+
+  <div class="hero-content">
+
+    <h2>探索越南</h2>
+
+    <h3>Khám phá Việt Nam</h3>
+
+    <p>
+      🎉 夏季優惠：
+      預訂兩人以上立即享 9 折優惠
+    </p>
+
+    <button onclick="document.getElementById('bookingForm').scrollIntoView({behavior:'smooth'})">
+
+      立即預訂 / Đặt ngay
+
+    </button>
+
+  </div>
+
+</div>
+
+<div class="promo-banner">
+
+🔥 限時優惠：
+會安旅遊行程折扣 15%
+
 </div>
 
 <!-- BASIC INFO -->
