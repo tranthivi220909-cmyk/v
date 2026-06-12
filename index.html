@@ -103,7 +103,7 @@ header h1{
   gap:20px;
 }
 
-/* CARD */
+/*  */
 
 .card{
   background:#fff;
@@ -310,20 +310,6 @@ iframe{
     opacity:0.6;
   }
 }
-
-.card{
-
-  background:#fff;
-
-  border-radius:20px;
-
-  overflow:hidden;
-
-  box-shadow:0 10px 25px rgba(0,0,0,0.12);
-
-  transition:0.4s;
-}
-
 .card:hover{
 
   transform:translateY(-10px);
@@ -405,6 +391,11 @@ footer{
     <p>公司 / Công ty: Travel with VNP QUEENS</p>
     <p>電話 / SĐT: 0970 126 327</p>
     <p>Email: travelvi@gmail.com</p>
+    <p>
+  <a href="https://facebook.com" target="_blank">📘 Facebook</a> |
+  <a href="https://instagram.com" target="_blank">📷 Instagram</a> |
+  <a href="https://tiktok.com" target="_blank">🎵 TikTok</a>
+</p>
     <p>網站 / Website: www.travelwithvnp.com</p>
 
     <p>
@@ -549,14 +540,14 @@ footer{
   </div>
 
   <div class="box">
+<h2>節慶 / Lễ hội</h2>
 
-    <h2>節慶 / Lễ hội</h2>
+<img src="https://images.unsplash.com/photo-1513151233558-d860c5398176" width="100%">
 
-    <p>農曆新年 / Tết Nguyên Đán</p>
-    <p>中秋節 / Trung thu</p>
-    <p>會安燈籠節 / Lễ hội đèn lồng Hội An</p>
-
-  </div>
+<p>農曆新年 / Tết Nguyên Đán</p>
+<p>中秋節 / Trung thu</p>
+<p>會安燈籠節 / Lễ hội đèn lồng Hội An</p>
+</div>
 
 </div>
 <!-- PROMOTION & NEWS -->
@@ -637,27 +628,90 @@ footer{
 
 <div class="section">
 
-  <div class="box">
+  <div class="title">
+    <h2>📸 打卡與分享 / Check-in & Chia sẻ</h2>
+  </div>
 
-    <h2>打卡與分享 / Check-in & Chia sẻ</h2>
+  <div class="grid">
 
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1549893072-4bc678117f45">
+      <div class="card-content">
+        <h3>河內 / Hà Nội</h3>
+        <p>
+          「還劍湖真的很漂亮！」<br>
+          "Hồ Gươm đẹp hơn mình tưởng rất nhiều."
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1528127269322-539801943592">
+      <div class="card-content">
+        <h3>會安 / Hội An</h3>
+        <p>
+          「晚上燈籠超浪漫！」<br>
+          "Phố cổ Hội An về đêm rất lung linh."
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21">
+      <div class="card-content">
+        <h3>和平 / Hòa Bình</h3>
+        <p>
+          「風景優美，空氣清新。」<br>
+          "Thiên nhiên rất đẹp và yên bình."
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="box" style="text-align:center;margin-top:20px;">
     <p>
-      📸 分享您的旅遊體驗給朋友！
+      📢 使用 #TravelWithVNPQueens 分享您的旅遊照片！
       <br>
-      Chia sẻ trải nghiệm du lịch của bạn với bạn bè.
+      Hãy chia sẻ ảnh du lịch của bạn với hashtag
+      #TravelWithVNPQueens
     </p>
+  </div>
 
-    <button onclick="shareFacebook()">
-      分享 Facebook
-    </button>
+</div>
+<!-- CUSTOMER REVIEWS -->
 
-    <button onclick="shareInstagram()">
-      分享 Instagram
-    </button>
+<div class="section">
 
-    <button onclick="copyLink()">
-      複製網站連結
-    </button>
+  <div class="title">
+    <h2>顧客評價 / Đánh giá khách hàng</h2>
+  </div>
+
+  <div class="grid">
+
+    <div class="box">
+      <h3>⭐⭐⭐⭐⭐</h3>
+      <p>
+        旅遊行程非常精彩，導遊很熱情。<br>
+        Tour rất tuyệt vời, hướng dẫn viên nhiệt tình.
+      </p>
+    </div>
+
+    <div class="box">
+      <h3>⭐⭐⭐⭐⭐</h3>
+      <p>
+        會安非常漂亮，美食也很好吃。<br>
+        Hội An rất đẹp và đồ ăn rất ngon.
+      </p>
+    </div>
+
+    <div class="box">
+      <h3>⭐⭐⭐⭐⭐</h3>
+      <p>
+        我一定會再次參加這個旅遊行程。<br>
+        Chắc chắn tôi sẽ tiếp tục tham gia tour này lần sau.
+      </p>
+    </div>
 
   </div>
 
@@ -711,11 +765,16 @@ footer{
 
       <br><br>
 
+      <label>備註 / Ghi chú</label><br>
+<textarea rows="4" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:8px;">
+  </textarea>
+      
+      <br><br>
       <button type="submit">
         立即預訂 / Đặt ngay
       </button>
 
-      <div class="success" id="successMessage"></div>
+      < class="success" id="successMessage"></div>
 
     </form>
 
@@ -987,7 +1046,10 @@ function showInsurance(){
   );
 }
 function shareFacebook(){
-  alert("分享至 Facebook 成功！\nĐã chia sẻ lên Facebook!");
+  window.open(
+  "https://www.facebook.com/sharer/sharer.php?u=" +
+  encodeURIComponent(window.location.href)
+  );
 }
 
 function shareInstagram(){
