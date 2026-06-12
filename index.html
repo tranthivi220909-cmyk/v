@@ -670,14 +670,23 @@ footer{
   </div>
 
   <div class="box" style="text-align:center;margin-top:20px;">
-    <p>
-      📢 使用 #TravelWithVNPQueens 分享您的旅遊照片！
-      <br>
-      Hãy chia sẻ ảnh du lịch của bạn với hashtag
-      #TravelWithVNPQueens
-    </p>
-  </div>
+  <p>
+    📢 使用 #TravelWithVNPQueens 分享您的旅遊照片！<br>
+    Hãy chia sẻ ảnh du lịch của bạn với hashtag #TravelWithVNPQueens
+  </p>
 
+  <!-- ⭐ THÊM NÚT SHARE Ở ĐÂY -->
+  <div style="margin-top:15px; display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
+
+    <button onclick="shareFacebook()">📘 Facebook</button>
+
+    <button onclick="shareInstagram()">📷 Instagram</button>
+
+    <button onclick="shareTikTok()">🎵 TikTok</button>
+
+    <button onclick="copyLink()">🔗 Copy link</button>
+
+  </div>
 </div>
 <!-- CUSTOMER REVIEWS -->
 
@@ -1061,6 +1070,27 @@ function copyLink(){
   navigator.clipboard.writeText(window.location.href);
 
   alert("網站連結已複製！\nĐã sao chép liên kết website!");
+  function shareFacebook() {
+  const url = encodeURIComponent(window.location.href);
+  window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, "_blank");
+}
+
+function shareInstagram() {
+  navigator.clipboard.writeText(window.location.href);
+  alert("📷 Đã copy link! Hãy dán vào Instagram Story hoặc Bio để chia sẻ.");
+  window.open("https://www.instagram.com/", "_blank");
+}
+
+function shareTikTok() {
+  navigator.clipboard.writeText(window.location.href);
+  alert("🎵 Đã copy link! Hãy dán vào TikTok Bio hoặc video.");
+  window.open("https://www.tiktok.com/", "_blank");
+}
+
+function copyLink() {
+  navigator.clipboard.writeText(window.location.href);
+  alert("🔗 Đã sao chép link website!");
+}
 }</script>
 
 </body>
